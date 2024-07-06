@@ -20,7 +20,7 @@
         @endfor
 
         @foreach ($students as $student)
-        <h2>{{ $student }}</h2>
+        <h2>Student's Name:{{ $student }}</h2>
         @endforeach
 
 </div>
