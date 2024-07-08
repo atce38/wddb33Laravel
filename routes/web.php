@@ -15,6 +15,18 @@ Route::get('login',function(){
 });
 
 
-Route::get('products',[ProductController::class,'index']);
+Route::prefix('products')->group(function(){
+    Route::get('/',[ProductController::class,'index'])->name('products.index');
+
+    Route::get('/{pid}/price/{koib}',[ProductController::class,'show'])->name('products.show');
+
+    Route::get('/create',[ProductController::class,'create'])->name('products.create');
+
+    Route::post('/store',[ProductController::class,'store'])->name('products.store');
+
+
+});
+
+
 
 

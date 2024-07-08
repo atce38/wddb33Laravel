@@ -20,4 +20,22 @@ class ProductController extends Controller
 
         return view('welcome');
     }
+
+    public function show($pid,$koib){
+
+        return "Name:".$pid.', Price:'.$koib;
+    }
+
+    public function create(){
+
+        return view('products.create');
+    }
+
+    public function store(Request $request){
+        $p_name=$request->name;
+        $p_price=$request->price;
+
+        return "<h1>The Name of Product:".$p_name.", Price :".$p_price."</h1>";
+
+    }
 }

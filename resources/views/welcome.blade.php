@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Laravel - Getting Started with Laravel</h1>
+    <a href="{{ route('products.index') }}">Products</a>
 
 </body>
 </html>
