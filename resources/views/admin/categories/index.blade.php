@@ -3,17 +3,15 @@
 @section('admin_content')
 <div class="section-admin container-fluid">
     <div class="row admin text-center">
-        <div class="col-md-12">
+        <div class="col-md-12 panel-body">
 
-            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true"
-    data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true"
-    data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true"
-    data-click-to-select="true" data-toolbar="#toolbar">
+            <table class="table table-striped">
     <thead>
-        <tr>
+        <tr class="table-dark">
 
-            <th data-field="id">ID</th>
-            <th data-field="name" data-editable="true">Category Title</th>
+            <th>ID</th>
+            <th>Category Title</th>
+            <th>Action</th>
 
         </tr>
     </thead>
@@ -22,6 +20,9 @@
         <tr>
             <td>{{ $category->id }}</td>
             <td>{{ $category->name }}</td>
+            <td><a class="btn btn-primary" href="{{ route('category.edit',['id'=>$category->id]) }}">Edit</a>
+                <a class="btn btn-danger" href="{{ route('category.delete',['id'=>$category->id]) }}">Delete</a>
+            </td>
         </tr>
 
         @endforeach

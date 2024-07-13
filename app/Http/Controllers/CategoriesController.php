@@ -14,32 +14,41 @@ class CategoriesController extends Controller
 
 
     public function create(){
-
-        return view('admin.categories.create');
+        $category=new Category();
+        return view('admin.categories.create',compact('category'));
     }
 
     public function store(Request $request){
-        $c_name=$request->name;
-        $category=new Category();
-        $category->name=$c_name;
-        $category->save();
+        // $c_name=$request->name;
+        // $category=new Category();
+        // $category->name=$c_name;
+        // $category->save();
+
+        Category::create($request->all());
 
         return redirect()->route('category.index');
 
     }
 
     public function edit($id){
+        // Select * from categories where id=$id
+        // $category=Category::find($id);
+        $category=Category::where('id',$id)->first();
 
-        return view('products.create');
+        return view('admin.categories.create',compact('category'));
     }
     public function update(Request $request, $id){
 
-        return view('products.create');
+        $category=Category::find($id);
+        // date('h:m:s');
+        $category->update($request->all());
+        return redirect()->route('category.index');
     }
 
     public function destroy($id){
-
-        return view('products.create');
+        $category=Category::find($id);
+        $category->delete();
+        return redirect()->route('category.index');
     }
 
 

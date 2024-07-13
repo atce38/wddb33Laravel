@@ -6,7 +6,7 @@
 <div class="section-admin container-fluid">
     <div class="row admin text-center">
         <div class="col-md-12">
-            <form action="{{ route('category.store') }}" method="POST">
+            <form action="{{ $category->id !=null ? route('category.update',['id'=>$category->id]) : route('category.store') }}" method="POST">
                 @csrf
             <div id="myTabContent" class="tab-content custom-product-edit">
                 <div class="product-tab-list tab-pane fade active in" id="description">
@@ -15,7 +15,7 @@
                             <div class="review-content-section">
                                 <div class="input-group mg-b-pro-edt">
                                     <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
-                                    <input type="text" name="name" class="form-control" placeholder="Category">
+                                    <input type="text" value="{{ $category->name }}" name="name" class="form-control" placeholder="Category">
                                 </div>
                             </div>
                         </div>
