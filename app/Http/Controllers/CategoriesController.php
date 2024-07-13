@@ -39,9 +39,18 @@ class CategoriesController extends Controller
     }
     public function update(Request $request, $id){
 
+        $data=$request->all();
         $category=Category::find($id);
         // date('h:m:s');
-        $category->update($request->all());
+        if($request->hasFile('image')){
+            $img_file=$request->file('image');
+            $destination="uploads";
+            $file_name="category_".time().'.'.$img_file->getClientOriginalExtension();
+            $img_file->move(public_path($destination),$file_name);
+            $data['img']='/'.$destination.'/'.$file_name;
+        }
+
+        $category->update($data);
         return redirect()->route('category.index');
     }
 

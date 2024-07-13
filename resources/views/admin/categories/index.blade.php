@@ -19,7 +19,7 @@
         @foreach ($categories as $category)
         <tr>
             <td>{{ $category->id }}</td>
-            <td>{{ $category->name }}</td>
+            <td> <img src="{{ $category->img }}" width="100" alt=""> {{ $category->name }}</td>
             <td><a class="btn btn-primary" href="{{ route('category.edit',['id'=>$category->id]) }}">Edit</a>
                 <a class="btn btn-danger" href="{{ route('category.delete',['id'=>$category->id]) }}">Delete</a>
             </td>
