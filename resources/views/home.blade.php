@@ -13,7 +13,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div>
+                        @if (auth()->user()->role =='admin')
+                        <div>
+                            {{ "Hello ADmin" }}
+                        </div>
+                            @else
+                            <div>
+                                {{ "This Area is restricted for admins only" }}
+                            </div>
+                        @endif
+                    </div>
+                    {{auth()->user()->email}}
                     {{ __('You are logged in!') }}
                 </div>
             </div>

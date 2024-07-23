@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 include 'admin_route.php';
@@ -19,7 +20,14 @@ Route::get('login',function(){
 
 
 Route::get('users',function(){
-return User::select('countries.name as country','users.*')->join('countries','countries.id','=','users.country_id')->get();
+
+   return DB::table('users')->select('countries.name as country','users.*')
+    ->join('countries','countries.id','=','users.country_id')
+    ->get();
+return User::select('countries.name as country','users.*')
+->join('countries','countries.id','=','users.country_id')
+->get();
+
 });
 
 
