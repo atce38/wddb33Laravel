@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 include 'admin_route.php';
+include 'shanzaamjad.php';
+include 'shanzaashraf.php';
 
 Route::get('/', [ProductController::class,'welcome']);
 
