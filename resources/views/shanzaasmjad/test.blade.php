@@ -1,3 +1,13 @@
-<div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New CODE to Submit Github</title>
+</head>
+<body>
+    <h1>Welcome to Github Project</h1>
+
+</body>
+</html>

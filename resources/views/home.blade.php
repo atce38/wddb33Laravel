@@ -12,6 +12,8 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
+
+
                     @endif
                     <div>
                         @if (auth()->user()->role =='admin')

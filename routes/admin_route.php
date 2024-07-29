@@ -17,6 +17,8 @@ Route::prefix('admin')->middleware('auth')->group(function(){
         Route::post('/update/{id}',[CategoriesController::class,'update'])->name('category.update');
         Route::get('/delete/{id}',[CategoriesController::class,'destroy'])->name('category.delete');
     });
+
+
     Route::prefix('/countries')->group(function(){
         Route::get('/',[CountryController::class,'index'])->name('country.index');
         Route::get('/create',[CountryController::class,'create'])->name('country.create');
