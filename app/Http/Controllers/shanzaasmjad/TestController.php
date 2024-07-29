@@ -10,4 +10,8 @@ class TestController extends Controller
     public function test(){
         return "Shanza Amjad";
     }
+
+    public function test1(){
+        return "Shanza Amjad";
+    }
 }
